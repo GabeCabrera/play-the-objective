@@ -1,0 +1,18 @@
+.header{
+	/* header styling */
+	font-family: sans-serif;
+}
+ul.topNav {
+	padding: 0;
+}
+
+ul.topNav li {
+	margin: 0;
+	padding: 2px;
+	display: inline;
+	list-style-type: none;
+  }
+  
+  ul.topNav li:active{
+	  background-color: #0099FF;
+  }
