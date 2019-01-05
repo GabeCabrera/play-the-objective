@@ -23,9 +23,9 @@ class App extends Component {
             </li>
           </ul>
           <div className="content">
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
+            <Route exact path="/" component={Home} className="linkItem"/>
+            <Route path="/about" component={About} className="linkItem" />
+            <Route path="/contact" component={Contact} className="linkItem"/>
           </div>
         </div>
       </HashRouter>
