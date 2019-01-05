@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack');
 const path = require('path');
 
@@ -5,7 +6,7 @@ module.exports = {
 	mode: 'development',
 	entry: './src/index.js',
 	output: {
-		path: __dirname + '/output',
+		path: __dirname + '/dist',
 		publicPath: '/',
 		filename: 'bundle.js'
 	},
@@ -29,10 +30,15 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new HtmlWebpackPlugin({
+			title: 'Custom template',
+			// Load a custom template (lodash by default)
+			template: './src/index.html'
+		  })
 	],
 	devServer: {
-		contentBase: './output',
+		contentBase: '/dist',
 		hot: true
 	}
 };
