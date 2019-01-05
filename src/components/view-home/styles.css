@@ -1,0 +1,57 @@
+
+/* Set font family to all objects */
+.smartSearch, .submitButton, h2 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.smartSearch {
+	margin: none;
+	outline: none;
+	border: none;
+
+	height: 30px;
+	width: 300px;
+
+	padding-right: 20px;
+	padding-left: 8px;
+
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+
+	color: whitesmoke;
+	background-color: rgb(53, 53, 53);
+}
+
+.submitButton{
+	outline: none;
+	border: none;
+	height: 33px;
+	width: 55px;
+
+	cursor: pointer;
+
+	color: rgb(228, 228, 228);
+	-moz-box-shadow:inset 0px 1px 0px 0px #cf866c;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #cf866c;
+	box-shadow:inset 0px 1px 0px 0px #cf866c;
+	background-color:#b63838;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:13px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.submitButton:active {
+	position:relative;
+	top:1px;
+
+	color: white;
+	background-color: rgb(170, 45, 45);
+}
