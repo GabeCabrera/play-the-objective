@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HeroList from "../../services/herolist";
 import Styles from "./styles.css";
 
 class Home extends Component {
@@ -8,9 +9,9 @@ class Home extends Component {
         <h2>COUNTER PICKER</h2>
         <input type="text" className="smartSearch"/>
         <button className="submitButton">&#x1F50D;</button>
-        <p>Counters will be displayed here</p>
+        <p>Information</p>
 
-        <p className="hero-information">This will be displayed with flexbox 1:1 hero information</p>
+        <HeroList></HeroList>
       </div>
     );
   }
