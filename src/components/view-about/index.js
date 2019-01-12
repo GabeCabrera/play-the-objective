@@ -5,15 +5,15 @@ class About extends Component {
 		return (
 			<div>
 				<h2>ABOUT</h2>
-				<p>Mauris sem velit, vehicula eget sodales vitae,
-       				 rhoncus eget sapien:</p>
-				<ol>
-					<li>Nulla pulvinar diam</li>
-					<li>Facilisis bibendum</li>
-					<li>Vestibulum vulputate</li>
-					<li>Eget erat</li>
-					<li>Id porttitor</li>
-				</ol>
+				<p># DOTA 2 PLAY-THE-OBJECTIVE <br />
+				<br />
+				TODO:<br />
+				-add images for heroes(http://www.dota2.com/heroes/)<br />
+				-find out how to do a smart search, # working on functionality.<br />
+				<br />
+				COMPLETE:<br />
+				-add data with list of heroes using api call to https://docs.opendota.com/heroes
+				</p>
 			</div>
 		);
 	}
