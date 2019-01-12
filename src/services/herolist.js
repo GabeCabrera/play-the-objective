@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Request from "superagent";
 
 const url = "https://api.opendota.com/api/heroes"
 
@@ -23,12 +22,14 @@ class HeroList extends React.Component {
 	}
 
 	render() {
-		console.log(this.state.heroes);
+		// console.log(this.state.heroes);
 
 		return (
 			<div>
 				<h1>HEROES</h1>
-				{this.state.heroes.map(hero => <div>{hero.localized_name}</div>)}
+				<select name="heroes">
+					{this.state.heroes.map(hero => <option key={hero.id} value={hero.name}>{hero.localized_name}</option>)}
+				</select>
 			</div>
 		);
 	}

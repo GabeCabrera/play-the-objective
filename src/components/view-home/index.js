@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import HeroList from "../../services/herolist";
+//import HeroList from "../../services/herolist";
+import Search from "../../services/smartSearch";
 import Styles from "./styles.css";
 
 class Home extends Component {
@@ -7,11 +8,8 @@ class Home extends Component {
     return (
       <div>
         <h2>COUNTER PICKER</h2>
-        <input type="text" className="smartSearch"/>
-        <button className="submitButton">&#x1F50D;</button>
-        <p>Information</p>
-
-        <HeroList></HeroList>
+        <Search className="smartSearch"></Search>
+        {/* <HeroList></HeroList> */}
       </div>
     );
   }
