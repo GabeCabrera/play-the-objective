@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Suggestions = (props) => {
   const options = props.results.map(result => (

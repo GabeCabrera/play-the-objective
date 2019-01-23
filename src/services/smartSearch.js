@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Suggestions from './suggestions'
 
 
 const url = "https://api.opendota.com/api/heroes"
-
 class Search extends Component {
 	constructor(props) {
 		super(props);
@@ -24,7 +22,7 @@ class Search extends Component {
 		)
 		.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 	}
-	
+
 	handleInputChange = () => {
     this.setState({
       query: this.search.value
@@ -48,7 +46,7 @@ class Search extends Component {
 				ref={input => this.search = input}
 				onChange={this.handleInputChange}
 			  />
-					<Suggestions results={this.state.heroes}></Suggestions>
+					<Suggestions results={this.state.heroes}/>
 			</form>
 			
 		  )

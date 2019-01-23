@@ -6,12 +6,13 @@ class HeroList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			query: '',
 			heroes: []
 		}
 	}
 
 	componentDidMount(){
-		fetch(url)
+		fetch(`${url}/${this.state.query}`)
 		.then(response => response.json())
 		.then (d =>
 			this.setState({
@@ -19,6 +20,16 @@ class HeroList extends React.Component {
 			})
 		)
 		.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+	}
+
+	handleInputChange = () => {
+		this.setState({
+			query: this.search.value
+		}, () => {
+			if(this.state.query && this.state.query.length > 1) {
+				this.componentDidMount()
+			}
+		})
 	}
 
 	render() {
