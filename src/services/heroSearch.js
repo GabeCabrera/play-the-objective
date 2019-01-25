@@ -1293,7 +1293,7 @@ class HeroSearch extends Component {
       return (
         hero.localized_name
           .toLowerCase()
-          .indexOf(this.state.heroSearch.toLowerCase()) !== -1
+          .includes(this.state.heroSearch.toLowerCase())
       );
     });
 
