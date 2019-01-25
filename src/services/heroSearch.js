@@ -1105,7 +1105,7 @@ const data = [
     attack_type: "Melee",
     roles: ["Support", "Carry", "Durable"],
     legs: 2,
-    image_url: ""
+    image_url: "http://cdn.dota2.com/apps/dota2/images/heroes/abaddon_hphover.png?v=4905471"
   },
   {
     id: 103,
@@ -1300,6 +1300,7 @@ class HeroSearch extends Component {
     return (
       <div>
         <input
+					className="smartSearch"
           type="text"
           id="heroSearch"
           value={this.state.heroSearch}
@@ -1307,14 +1308,14 @@ class HeroSearch extends Component {
           onChange={this.updateSearch.bind(this)}
         />
         <h5>Heroes ({heroes.length} results)</h5>
-        <ul name="heroes">
+        <ul name="heroes" className="heroContainer">
           {heroes.map(hero => (
-            <div key={hero.id}>
-              <li className="hero-name"  value={hero.name}>
-                {hero.localized_name}
-              </li>
-              <img className="hero-img" src={hero.image_url} />
-            </div>
+            <a key={hero.id} className="wrapper" href="#">
+              <div className="hero-name" value={hero.name}>
+								{hero.localized_name}
+              </div>
+							<img className="hero-img"src={hero.image_url}/>
+            </a>
           ))}
         </ul>
       </div>
