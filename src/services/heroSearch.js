@@ -1308,7 +1308,7 @@ class HeroSearch extends Component {
           name="heroSearch"
           onChange={this.updateSearch.bind(this)}
         />
-        <h5>Heroes ({data.length} results)</h5>
+        <h5>Heroes ({heroes.length} results)</h5>
         <ul name="heroes">
           {heroes.map(hero => (
             <div key={hero.id}>
