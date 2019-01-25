@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-//import HeroList from "../../services/herolist";
-import Search from "../../services/smartSearch";
+import HeroSearch from '../../services/heroSearch'
 import Styles from "./styles.css";
 
 class Home extends Component {
@@ -8,8 +7,7 @@ class Home extends Component {
     return (
       <div>
         <h2>COUNTER PICKER</h2>
-        <Search className="smartSearch"></Search>
-        {/* <HeroList></HeroList> */}
+          <HeroSearch></HeroSearch>
       </div>
     );
   }

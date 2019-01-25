@@ -55,3 +55,15 @@
 	color: white;
 	background-color: rgb(170, 45, 45);
 }
+
+.codeBox {
+	background-color: gray;
+}
+
+/* .hero-img {
+
+} */
+
+.hero-name {
+	list-style-type: none;
+}
