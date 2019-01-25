@@ -1286,8 +1286,6 @@ class HeroSearch extends Component {
 
   updateSearch(event) {
     this.setState({ heroSearch: event.target.value.substr(0, 20) });
-
-    console.log(event.target.value);
   }
 
   render() {
