@@ -5,14 +5,22 @@ class About extends Component {
 		return (
 			<div>
 				<h2>ABOUT</h2>
-				<p># DOTA 2 PLAY-THE-OBJECTIVE <br />
-				<br />
-				TODO:<br />
-				-add images for heroes(http://www.dota2.com/heroes/)<br />
-				-find out how to do a smart search, # working on functionality.<br />
-				<br />
-				COMPLETE:<br />
-				-add data with list of heroes using api call to https://docs.opendota.com/heroes
+				<h2># DOTA 2 PLAY-THE-OBJECTIVE</h2>
+				<p>
+					TODO:<br />
+					<br />
+					- Change current LI for heroes to a selectable drop down list.<br />
+					- Pretty it up with some CSS.<br />
+					- Add search filters.<br />
+					<br />
+					COMPLETE:<br />
+					<br />
+					+ list of heroes from JS Object.<br />
+					+ Added Search functionality.<br />
+					+ Added images for heroes.<br />
+
+
+
 				</p>
 			</div>
 		);

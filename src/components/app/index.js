@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <HashRouter>
         <div className="header">
-          <h1>PLAY THE OBJECTIVE</h1>
+          <h1 className="title">PLAY THE OBJECTIVE</h1>
           <ul className="topNav">
             <li>
               <NavLink to="/">Home</NavLink>

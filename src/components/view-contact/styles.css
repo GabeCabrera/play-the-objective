@@ -1,0 +1,7 @@
+.git-link {
+	text-decoration: none; /* no underline */
+	color: white;
+}
+.git-link:hover{
+	color: rgb(228, 228, 228);
+}

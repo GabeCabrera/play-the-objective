@@ -1,15 +1,21 @@
-/* Set font family to all objects */
 .smartSearch, .submitButton, h2 {
+
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
+
+}
+
+.wrapper{
+	width: 100%;
 }
 
 .smartSearch {
+
 	margin: none;
 	outline: none;
 	border: none;
 
-	height: 30px;
+	height: 35px;
 	width: 300px;
 
 	padding-right: 20px;
@@ -18,51 +24,87 @@
 	border-radius: 5px;
 
 	color: whitesmoke;
-	background-color: rgb(53, 53, 53);
+	background-color: rgb(29, 29, 31);
+	box-shadow: inset 0px 0px 45px rgb(17, 17, 17);
+
+
+}
+
+.numberResults {
+	width: 1000px;
 }
 
 .heroContainer{
-	background-color: rgb(66, 20, 20);
-	padding-top: 15px;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex: 0 0 50%;
+	float: left;
+
+	min-width: 48%;
+	max-width: 600px;
+	max-height: 400px;
+	min-height: 675px;
+
+	margin-top: 0;
+
+	padding-top: 25px;
+	padding-bottom: 15px;
+
 	border-radius: 10px;
+
+	list-style: none;
+
+	box-shadow: inset 0px 0px 50px rgb(12, 12, 12); 
+	background-color: rgb(29, 29, 31);
 }
 
-.wrapper {
-	display: inline-grid;
-	transform: scale(0.8, 0.8);
- 	 -ms-transform: scale(0.8, 0.8);
-  	-webkit-transform: scale(0.8, 0.8);
-  	-o-transform: scale(0.8, 0.8); 
-  	-moz-transform: scale(0.8, 0.8);
+.counterContainer{
+
+	display: flex;
+	flex: 1;
+	float: right;
+
+	min-width: 46%;
+	max-width: 675px;
+	max-height: 400px;
+	min-height: 675px;
+
+	padding: 25px 0 15px 25px;
+
+	border-radius: 10px;
+
+	box-shadow: inset 0px 0px 50px rgb(12, 12, 12); 
+	background-color: rgb(29, 29, 31);
+
 }
+
 
 .hero-img {
-	z-index: 3;
-	border-width: 3px;
-	border-style: solid;
-	border-color: rgb(255, 255, 255);
+
+	float: left;
+    position: relative;
+	display: block;
 	
+    width: 59px;
+	height: 33px;
+	
+    padding: 4px;
+    margin-left: 2px;
+	margin-bottom: 3px;
+	
+    -moz-border-radius: 3px;
+	border-radius: 3px;
+
 }
 
+.hero-img:hover,
+.hero-name:hover + .hero-img {
 
-.hero-img:hover {
-	background: linear-gradient(#004092, #020202, transparent), no-repeat center; 
+	background: linear-gradient(#dddddd, transparent, transparent), no-repeat center; 
 	background-size: cover; 
-	box-shadow: 0px 10px 20px -5px rgba(0,0,0,.8); 
+	box-shadow: 0px 0px 0px -10px rgba(235, 235, 235, 0.8); 
+
 	cursor: pointer;
-	
-}
-
-.hero-name {
-	z-index: 5;
-	list-style-type: none;
-	text-decoration: none; /* no underline */
-	color: white;
 
 }
-
-/* transform: scale(0.8, 0.8);
- 	 -ms-transform: scale(0.8, 0.8);
-  	-webkit-transform: scale(0.8, 0.8);
-  	-o-transform: scale(0.8, 0.8); 
-  	-moz-transform: scale(0.8, 0.8); Firefox */

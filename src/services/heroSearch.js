@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CounterPick from './counterPick'
 
 const data = [
   {
@@ -1269,9 +1270,9 @@ const data = [
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler", "Escape"],
     legs: 2,
-    image_url:
-      "http://cdn.dota2.com/apps/dota2/images/heroes/grimstroke_hphover.png"
-  }
+    image_url:"http://cdn.dota2.com/apps/dota2/images/heroes/grimstroke_hphover.png"
+  },
+ 
 ];
 
 class HeroSearch extends Component {
@@ -1294,11 +1295,12 @@ class HeroSearch extends Component {
         hero.localized_name
           .toLowerCase()
           .includes(this.state.heroSearch.toLowerCase())
+          
       );
     });
 
     return (
-      <div>
+      <div className="wrapper">
         <input
 					className="smartSearch"
           type="text"
@@ -1307,17 +1309,19 @@ class HeroSearch extends Component {
           name="heroSearch"
           onChange={this.updateSearch.bind(this)}
         />
-        <h5>Heroes ({heroes.length} results)</h5>
+        {/* Number of Results */}
+        <h5 className="numberResults">Heroes ({heroes.length} results)</h5>
+
+        {/* Populate images in container */}
         <ul name="heroes" className="heroContainer">
           {heroes.map(hero => (
-            <a key={hero.id} className="wrapper" href="#">
-              <div className="hero-name" value={hero.name}>
-								{hero.localized_name}
-              </div>
+            <li key={hero.id} href="#">
 							<img className="hero-img"src={hero.image_url}/>
-            </a>
+            </li>
           ))}
         </ul>
+
+        <CounterPick></CounterPick>
       </div>
     );
   }
