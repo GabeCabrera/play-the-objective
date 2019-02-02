@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CounterPick from './counterPick'
 
 const data = [
   {
@@ -1106,7 +1105,8 @@ const data = [
     attack_type: "Melee",
     roles: ["Support", "Carry", "Durable"],
     legs: 2,
-    image_url: "http://cdn.dota2.com/apps/dota2/images/heroes/abaddon_hphover.png?v=4905471"
+    image_url:
+      "http://cdn.dota2.com/apps/dota2/images/heroes/abaddon_hphover.png?v=4905471"
   },
   {
     id: 103,
@@ -1270,39 +1270,45 @@ const data = [
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler", "Escape"],
     legs: 2,
-    image_url:"http://cdn.dota2.com/apps/dota2/images/heroes/grimstroke_hphover.png"
-  },
- 
+    image_url:
+      "http://cdn.dota2.com/apps/dota2/images/heroes/grimstroke_hphover.png"
+  }
 ];
 
 class HeroSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      heroSearch: "",
-      filteredData: []
+      heroSearch: '',
+      filteredData: [],
+
+      showHero: ''
     };
     this.updateSearch = this.updateSearch.bind(this);
+    this.heroName=this.heroName.bind(this)
   }
 
   updateSearch(event) {
     this.setState({ heroSearch: event.target.value.substr(0, 20) });
   }
 
+  heroName(clickedId, e) {
+    this.showHero = clickedId
+    e = this.showHero
+  }
+
+  
+
   render() {
     let heroes = data.filter(hero => {
-      return (
-        hero.localized_name
-          .toLowerCase()
-          .includes(this.state.heroSearch.toLowerCase())
-          
-      );
+      return hero.localized_name
+        .toLowerCase()
+        .includes(this.state.heroSearch.toLowerCase());
     });
-
     return (
       <div className="wrapper">
         <input
-					className="smartSearch"
+          className="smartSearch"
           type="text"
           id="heroSearch"
           value={this.state.heroSearch}
@@ -1315,13 +1321,16 @@ class HeroSearch extends Component {
         {/* Populate images in container */}
         <ul name="heroes" className="heroContainer">
           {heroes.map(hero => (
-            <li key={hero.id} href="#">
-							<img className="hero-img"src={hero.image_url}/>
+            <li key={hero.id} onClick={e => this.heroName(hero.id)}>
+              <img className="hero-img" src={hero.image_url} />
             </li>
           ))}
         </ul>
 
-        <CounterPick></CounterPick>
+        <div name="counter" className="counterContainer">
+             {this.showHero}
+        </div>
+
       </div>
     );
   }

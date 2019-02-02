@@ -27,7 +27,6 @@
 	background-color: rgb(29, 29, 31);
 	box-shadow: inset 0px 0px 45px rgb(17, 17, 17);
 
-
 }
 
 .numberResults {
@@ -41,7 +40,7 @@
 	flex: 0 0 50%;
 	float: left;
 
-	min-width: 48%;
+	min-width: 45%;
 	max-width: 600px;
 	max-height: 400px;
 	min-height: 675px;
@@ -55,8 +54,8 @@
 
 	list-style: none;
 
-	box-shadow: inset 0px 0px 50px rgb(12, 12, 12); 
 	background-color: rgb(29, 29, 31);
+	box-shadow: inset 0px 0px 50px rgb(17, 17, 17); 
 }
 
 .counterContainer{
@@ -70,12 +69,13 @@
 	max-height: 400px;
 	min-height: 675px;
 
-	padding: 25px 0 15px 25px;
+	padding: 25px 0px 15px 25px;
+	margin-right: 25px;
 
 	border-radius: 10px;
 
-	box-shadow: inset 0px 0px 50px rgb(12, 12, 12); 
 	background-color: rgb(29, 29, 31);
+	box-shadow: inset 0px 0px 50px rgb(17, 17, 17); 
 
 }
 
@@ -102,6 +102,17 @@
 .hero-name:hover + .hero-img {
 
 	background: linear-gradient(#dddddd, transparent, transparent), no-repeat center; 
+	background-size: cover; 
+	box-shadow: 0px 0px 0px -10px rgba(235, 235, 235, 0.8); 
+
+	cursor: pointer;
+
+}
+
+.hero-img:active,
+.hero-name:active + .hero-img {
+
+	background: linear-gradient(#cccccc, transparent, transparent), no-repeat center; 
 	background-size: cover; 
 	box-shadow: 0px 0px 0px -10px rgba(235, 235, 235, 0.8); 
 
