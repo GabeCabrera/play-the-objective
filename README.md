@@ -4,6 +4,7 @@ TODO:
 - Change current LI for heroes to a selectable drop down list.
 - Pretty it up with some CSS.
 - Add search filters.
+- Add Counter feature
 
 COMPLETE:
 + list of heroes from JS Object.

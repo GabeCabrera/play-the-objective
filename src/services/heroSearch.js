@@ -9,8 +9,8 @@ const data = [
     attack_type: "Melee",
     roles: ["Carry", "Escape", "Nuker"],
     legs: 2,
-    image_url:
-      "http://cdn.dota2.com/apps/dota2/images/heroes/antimage_hphover.png?v=4905471"
+    image_url:"http://cdn.dota2.com/apps/dota2/images/heroes/antimage_hphover.png?v=4905471",
+    counter: ["Disruptor", "Axe"]
   },
   {
     id: 2,
@@ -20,8 +20,7 @@ const data = [
     attack_type: "Melee",
     roles: ["Initiator", "Durable", "Disabler", "Jungler"],
     legs: 2,
-    image_url:
-      "http://cdn.dota2.com/apps/dota2/images/heroes/axe_hphover.png?v=4905471"
+    image_url:"http://cdn.dota2.com/apps/dota2/images/heroes/axe_hphover.png?v=4905471"
   },
   {
     id: 3,
@@ -1282,22 +1281,39 @@ class HeroSearch extends Component {
       heroSearch: '',
       filteredData: [],
 
-      showHero: ''
+      showHero: '',
+      showImage: '',
+      heroCounter: ''
     };
     this.updateSearch = this.updateSearch.bind(this);
-    this.heroName=this.heroName.bind(this)
+    this.updateHeroContainer=this.updateHeroContainer.bind(this)
   }
+
+  // FUNCTIONS
 
   updateSearch(event) {
     this.setState({ heroSearch: event.target.value.substr(0, 20) });
   }
 
-  heroName(clickedId, e) {
-    this.showHero = clickedId
-    e = this.showHero
+  updateHeroContainer(clickedId, clickedImg, heroCounter) {
+ 
+    this.showHero = clickedId;
+    this.showImage = clickedImg;
+    this.heroCounter = heroCounter;
+
+    this.setState({ showHero: clickedId });
+    this.setState({ showImage: clickedImg });
+    this.setState({ heroCounter: heroCounter });
+
+    document.getElementById("counterName").textContent = clickedId;
+    document.getElementById("counterImage").src = clickedImg;
+    document.getElementById("heroCounter").textContent = `${heroCounter}`;
+    // #TODO need some kind of for loop that creates 
+    // an LI for each item in the heroCounter array
   }
 
   
+  // RENDER TO VIEW
 
   render() {
     let heroes = data.filter(hero => {
@@ -1305,8 +1321,12 @@ class HeroSearch extends Component {
         .toLowerCase()
         .includes(this.state.heroSearch.toLowerCase());
     });
+    console.log(this.showImage);
+
     return (
+      // BODY
       <div className="wrapper">
+        {/* SEARCH BAR */}
         <input
           className="smartSearch"
           type="text"
@@ -1315,21 +1335,30 @@ class HeroSearch extends Component {
           name="heroSearch"
           onChange={this.updateSearch.bind(this)}
         />
-        {/* Number of Results */}
+        {/* NUMBER OF CURRENTLY SHOWN RESULTS */}
         <h5 className="numberResults">Heroes ({heroes.length} results)</h5>
 
-        {/* Populate images in container */}
+        {/* HERO CONTAINER */}
         <ul name="heroes" className="heroContainer">
           {heroes.map(hero => (
-            <li key={hero.id} onClick={e => this.heroName(hero.id)}>
+            <li key={hero.id} onClick={e => 
+              this.updateHeroContainer(
+                hero.localized_name,
+                hero.image_url,
+                hero.counter
+                )}>
               <img className="hero-img" src={hero.image_url} />
             </li>
           ))}
         </ul>
 
-        <div name="counter" className="counterContainer">
-             {this.showHero}
-        </div>
+        {/* COUNTER CONTAINER */}
+        <ul name="counter" className="counterContainer">
+          <h1 id="counterName" className="counterName"></h1>
+          <img className="counter-img" id="counterImage"></img>
+          <li id="heroCounter" class="heroCounter"></li>
+             
+        </ul>
 
       </div>
     );
