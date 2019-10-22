@@ -1673,8 +1673,6 @@ class HeroSearch extends Component {
       </li>
     })
     
-    console.log("heroImage: ", this.state.clickedHero.img);
-
     return (
       // BODY
       <div className="wrapper">
@@ -1695,7 +1693,7 @@ class HeroSearch extends Component {
           {heroes.map(hero => (
             <li
               key={hero.id}
-              onClick={e =>
+              onClick={() =>
                 this.updateHeroContainer(
                   hero.localized_name,
                   hero.image_url,
@@ -1711,7 +1709,7 @@ class HeroSearch extends Component {
         {/* COUNTER CONTAINER */}
         <ul name="counter" className="counterContainer">
           <h1 id="counterName" className="counterName">{clickedHero.id}</h1>
-          <img className="counter-img" id="counterImage" src={clickedHero.img} />
+          <img className="counter-img" id="counterImage" src={clickedHero.img}/>
           {counterList}
         </ul>
       </div>

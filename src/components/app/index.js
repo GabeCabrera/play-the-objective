@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Styles from './styles.css';
+import './styles.css';
 import { Route, NavLink, HashRouter } from 'react-router-dom';
 import Home from 'components/view-home';
 import About from 'components/view-about';
